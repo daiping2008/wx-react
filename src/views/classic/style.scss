@@ -13,4 +13,11 @@
     border-top: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5;
   }
+  .navi-container{
+    width: 100%;
+    @include row();
+    @include center();
+    position: absolute;
+    bottom: px2rem(40);
+  }
 }

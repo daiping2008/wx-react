@@ -20,6 +20,16 @@ export const setLikeCount = payload => ({
   payload: fromJS(payload)
 })
 
+export const setLatest = payload => ({
+  type: types.SET_LATEST,
+  payload: fromJS(payload)
+})
+
+export const setFirst = payload => ({
+  type: types.SET_FIRST,
+  payload: fromJS(payload)
+})
+
 export const getClassicLatest = () => {
   return dispatch => {
     classicModel.getClassicLatest().then(res => {
@@ -32,11 +42,21 @@ export const getClassicLatest = () => {
 
 export const handleLike = ({like, likeCount, id, category}) => {
   return dispatch => {
-    console.log({like, likeCount})
     const behavior = !like ? 'like' : 'cancel'
     likeModel.like({behavior, id, category}).then(res => {
       dispatch(setLike(!like))
       dispatch(setLikeCount(!like ? (likeCount + 1) : (likeCount - 1)))
     })
+  }
+}
+
+export const getCurrentClassic = (index, nextOrPrev) => {
+  return dispatch => {
+    classicModel.getCurrentClassic(index, nextOrPrev)
+      .then(res => {
+        dispatch(setClassic(res))
+        dispatch(setLatest(classicModel.isLatest(res.index)))
+        dispatch(setFirst(classicModel.isFirst(res.index)))
+      })
   }
 }

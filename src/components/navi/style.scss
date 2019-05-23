@@ -1,0 +1,20 @@
+@import '../../assets/style/mixin.scss';
+
+.navi-wrapper {
+  width: px2rem(300);
+  height: px2rem(40);
+  @include row();
+  @include center();
+  background-color: #f7f7f7;
+  border-radius: px2rem(2);
+  .icon {
+    flex: 0 0 px2rem(40);
+    width: px2rem(40);
+    height: px2rem(40);
+  }
+  .title {
+    flex: 1;
+    font-size: px2rem(14);
+    text-align: center;
+  }
+}
