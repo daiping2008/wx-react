@@ -5,6 +5,8 @@ import {actions} from '../../store/classic'
 import Like from '../../components/like'
 import Episode from '../../components/episode'
 import Movie from '../../components/classic/movie'
+import Essay from '../../components/classic/essay'
+import Music from '../../components/classic/music'
 import Navi from '../../components/navi'
 import './style.scss'
 @connect(
@@ -73,9 +75,19 @@ class Classic extends React.Component {
 
   renderMain() {
     const { classic } = this.props
-    const movie = <Movie data={classic} />
+    let res = ''
+    const type = classic.type
 
-    return movie
+    if (type === 100) {
+      res = <Movie data={classic} />
+    }
+    if (type === 200) {
+      res = <Music data={classic} />
+    }
+    if (type === 300) {
+      res = <Essay data={classic} />
+    }
+    return res
   }
 
   handleLike() {

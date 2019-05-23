@@ -1,0 +1,18 @@
+
+@import '../style.scss';
+.music-wrapper {
+  .img {
+    width: px2rem(211);
+    height: px2rem(211);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    top: px2rem(39);
+  }
+  .player-img {
+    position: absolute;
+    width: px2rem(60);
+    height: px2rem(60);
+    top: px2rem(114.5);
+  }
+}
