@@ -1,4 +1,30 @@
 $ration: 375 / 10;
+
 @function px2rem($px) {
   @return $px / $ration + rem
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column
+}
+
+@mixin  center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin left {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin right {
+    justify-content: flex-end;
+    align-items: center
 }

@@ -1,0 +1,18 @@
+@import '../../assets/style/mixin.scss';
+
+.like-wrapper {
+  @include row();
+  padding: px2rem(5);
+  .img {
+    width: px2rem(16);
+    height: px2rem(14);
+  }
+  .count {
+    font-size: px2rem(12);
+    line-height: px2rem(12);
+    color: #bbbbbb;
+    position: relative;
+    bottom: px2rem(5);
+    left: px2rem(3);
+  }
+}
