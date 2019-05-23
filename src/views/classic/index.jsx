@@ -4,6 +4,7 @@ import {actions} from '../../store/classic'
 
 import Like from '../../components/like'
 import Episode from '../../components/episode'
+import Movie from '../../components/classic/movie'
 import './style.scss'
 @connect(
   state => {
@@ -36,12 +37,23 @@ class Classic extends React.Component {
           <Episode index={classic.index} />
           <Like handleLike={this.handleLike} like={like} likeCount={likeCount} />
         </div>
+        <div className='classsic-main'>
+          { this.renderMain() }
+        </div>
       </div>
     )
   }
   componentDidMount() {
     this.props.getClassicLatest()
   }
+
+  renderMain() {
+    const { classic } = this.props
+    const movie = <Movie data={classic} />
+
+    return movie
+  }
+
   handleLike() {
     const { like, likeCount, classic } = this.props
 
