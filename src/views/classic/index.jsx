@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import {actions} from '../../store/classic'
 
 import Like from '../../components/like'
-
+import Episode from '../../components/episode'
+import './style.scss'
 @connect(
   state => {
     return {
@@ -28,10 +29,11 @@ class Classic extends React.Component {
     this.handleLike = this.handleLike.bind(this)
   }
   render() {
-    const { like, likeCount } = this.props
+    const { like, likeCount, classic } = this.props
     return  (
-      <div className='container'>
+      <div className='classic-container'>
         <div className='header'>
+          <Episode index={classic.index} />
           <Like handleLike={this.handleLike} like={like} likeCount={likeCount} />
         </div>
       </div>

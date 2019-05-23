@@ -2,6 +2,7 @@
 
 .like-wrapper {
   @include row();
+  display: inline-flex;
   padding: px2rem(5);
   .img {
     width: px2rem(16);
