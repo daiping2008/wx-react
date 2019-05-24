@@ -1,0 +1,158 @@
+@import '../../assets/style/mixin.scss';
+.book-detail-container {
+  @include column();
+  padding-bottom: px2rem(60);
+  background-color: #f5f5f5;
+  .header {
+    @include column();
+    @include center();
+    background-color: #fff;
+    width: 100%;
+    padding-top: px2rem(20);
+    padding-bottom: px2rem(20);
+    > img {
+      width: px2rem(100);
+      height: px2rem(150);
+    }
+    .title {
+      color: #2f2f2f;
+      font-size: px2rem(19);
+      margin-top: px2rem(10);
+      margin-bottom: px2rem(10);
+      font-weight: bold;
+    }
+    .author {
+      color: #999;
+      font-size: px2rem(14);
+    }
+  }
+  .sub-container {
+    width: 100%;
+    @include column();
+    margin-top: px2rem(15);
+    padding: px2rem(15);
+    box-sizing: border-box;
+    background-color: #fff;
+    .sub-title{
+      font-size: px2rem(15);
+      font-weight: bold;
+      color: #2f2f2f;
+      margin-bottom: px2rem(10);
+      text-align: center;
+    }
+    .tag-container {
+      @include row();
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .tag {
+        display: inline-flex;
+        margin-right: px2rem(7.5);
+        margin-bottom: px2rem(5);
+        border-radius: px2rem(2);
+        &:nth-child(1) {
+          .tag-wrapper {
+            background-color: #fffbdd!important;
+          }
+          
+        }
+        &:nth-child(2) {
+          .tag-wrapper {
+            background-color: #eefbff!important;
+          }
+        }
+      }
+    }
+    .summary {
+      font-size: px2rem(13);
+      color: #999;
+      text-indent: px2rem(26);
+      line-height: px2rem(16);
+    }
+    .detail-container {
+      @include column();
+      font-size: px2rem(14);
+      color: #999;
+      margin-bottom: px2rem(10);
+      .detail-item {
+        @include row();
+        @include left();
+        margin-bottom: px2rem(4);
+        .name {
+          width: px2rem(75);
+          text-align: right;
+        }
+      }
+    }
+  }
+  .post-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    height: px2rem(50);
+    @include row();
+    @include center();
+    justify-content: space-between;
+    padding: 0 px2rem(15);
+    box-shadow: 1px -1px 1px #e3e3e3;
+    z-index: 3;
+    .post-fake {
+      font-size: px2rem(14);
+      color: #999;
+      width: px2rem(230);
+      height: px2rem(30);
+      line-height: px2rem(30);
+      text-align: center;
+      border: 1px solid #999;
+      border-radius: px2rem(7.5);
+    }
+    .right-side {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .posting-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 1px -1px 1px #e3e3e3;
+    padding: 0 px2rem(10);
+    box-sizing: border-box;
+    z-index: 10;
+    .posting-header {
+      width: 100%;
+      @include row();
+      justify-content: space-between;
+      font-size: px2rem(16);
+      padding: px2rem(8);
+      box-sizing: border-box;
+      .cancel {
+        color: #999;
+      }
+    }
+    .comment-container{
+      @include row();
+      flex-wrap: wrap;
+      .tag {
+        margin-right: px2rem(7.5);
+        margin-bottom: px2rem(5);
+        border-radius: px2rem(2);
+      }
+    }
+    .post {
+      border: none;
+      outline: none;
+      width: px2rem(345);
+      margin: px2rem(7.5) auto;
+      height: px2rem(28);
+      line-height: px2rem(28);
+      text-align: center;
+      background-color: #f5f5f5;
+      border-radius: px2rem(15);
+      margin-left: px2rem(7.5)
+    }
+  }
+}

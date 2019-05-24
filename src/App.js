@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import Classic from './views/classic'
 import Book from './views/book'
+import BookDetail from './views/book-detail'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Switch>
             <Route path='/' exact component={Classic} />
             <Route path='/book' component={Book} />
+            <Route path='/book-detail/:bid' component={BookDetail} />
           </Switch>
         </BrowserRouter>
       </div>

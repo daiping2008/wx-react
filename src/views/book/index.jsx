@@ -56,8 +56,8 @@ class Book extends React.Component {
 
     return (
       books.map(v => (
-        <div className='book-item'>
-          <VBook data={v} key={v.id} />
+        <div key={v.id} className='book-item'>
+          <VBook data={v} />
         </div>  
       ))
     )
