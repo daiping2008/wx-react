@@ -137,6 +137,7 @@
       @include row();
       flex-wrap: wrap;
       .tag {
+        display: inline-flex;
         margin-right: px2rem(7.5);
         margin-bottom: px2rem(5);
         border-radius: px2rem(2);
